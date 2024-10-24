@@ -10,51 +10,53 @@ class HelpersUnitTestCase {
 
 	@Test
 	void givenWantValidateIfObjectIsNullwhenObjectIsNullThenResultIsTrue() {
-		//arrange: Initial Context 
+		// arrange: Initial Context
 		String object = null;
-		
-		//act
+
+		// act
 		boolean result = ObjectHelper.isNull(object);
-		
-		//Assert
+
+		// Assert
 		assertTrue(result);
-		
+
 	}
+
 	@Test
 	void givenWantValidateIfObjectIsNotNullwhenObjectIsNotNullThenResultIsFalse() {
-		//arrange: Initial Context 
+		// arrange: Initial Context
 		var object = "";
-		
-		//act : execute action
+
+		// act : execute action
 		boolean result = ObjectHelper.isNull(object);
-		
-		//Assert validate result
+
+		// Assert validate result
 		assertFalse(result);
-   }
+	}
+
 	@Test
 	void givenWantGetOriginalValuewhenObjectIsNotNullThenResultIsTheSameObject() {
-		//arrange: Initial Context 
+		// arrange: Initial Context
 		var object = "casa";
 		var defaultValue = "Default";
-		
-		//act : execute action
+
+		// act : execute action
 		var result = ObjectHelper.getDefault(object, defaultValue);
-		
-		//Assert validate result
+
+		// Assert validate result
 		assertEquals(object, result);
 	}
 
+	@Test
+	
+	void givenWantGetDefaultValuewhenObjectIsNotNullThenResultIsDefaultObject() {
+		// arrange: Initial Context
+		String object = null;
+		var defaultValue = "Default";
 
-@Test
-void givenWantGetDefaultValuewhenObjectIsNotNullThenResultIsDefaultObject() {
-	//arrange: Initial Context 
-	String object = null;
-	var defaultValue = "Default";
-	
-	//act : execute action
-	var result = ObjectHelper.getDefault(object, defaultValue);
-	
-	//Assert validate result
-	assertEquals(defaultValue, result);
-  }
+		// act : execute action
+		var result = ObjectHelper.getDefault(object, defaultValue);
+
+		// Assert validate result
+		assertEquals(defaultValue, result);
+	}
 }
