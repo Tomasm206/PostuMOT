@@ -1,10 +1,11 @@
-package co.edu.uco.postumot.geografias.entity;
+package co.edu.uco.postumot.geographies.entity;
 
 import java.util.UUID;
 
 import co.edu.uco.crosscutting.helpers.ObjectHelper;
 import co.edu.uco.crosscutting.helpers.TextHelper;
 import co.edu.uco.crosscutting.helpers.UUIDHelper;
+import co.edu.uco.postumot.DomainEntity;
 
 public class StateEntity extends DomainEntity {
 

@@ -1,9 +1,9 @@
-package co.edu.uco.postumot.geografias.entity;
+package co.edu.uco.postumot;
 
 import java.util.UUID;
 import co.edu.uco.crosscutting.helpers.UUIDHelper;
 
-class DomainEntity {
+public class DomainEntity {
 
 	private UUID id;
 
