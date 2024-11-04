@@ -1,8 +1,11 @@
 package co.edu.uco.postumot.postulant.entity;
 
+import java.util.UUID;
+
 import co.edu.uco.crosscutting.helpers.ObjectHelper;
+import co.edu.uco.crosscutting.helpers.TextHelper;
 import co.edu.uco.crosscutting.helpers.UUIDHelper;
-import co.edu.uco.postumot.DomainEntity;
+import co.edu.uco.postumot.common.domain.DomainEntity;
 import co.edu.uco.postumot.geographies.entity.CityEntity;
 
 public class PostulanteEntity extends DomainEntity {
@@ -28,31 +31,32 @@ public class PostulanteEntity extends DomainEntity {
 		setEmail(email);
 		setSex(sex);
 		setTipoDocumento(tipoDocumento);
+		setCity(city);
 	}
 	
 	public String getFirstName() {
 		return firstName;
 	}
 	public void setFirstName(final String firstName) {
-		this.firstName = firstName;
+		this.firstName = TextHelper.applyTrim(firstName);
 	}
 	public String getSecondName() {
 		return secondName;
 	}
 	public void setSecondName(final String secondName) {
-		this.secondName = secondName;
+		this.secondName = TextHelper.applyTrim(secondName);
 	}
 	public String getLastName() {
 		return lastName;
 	}
 	public void setLastName(final String lastName) {
-		this.lastName = lastName;
+		this.lastName = TextHelper.applyTrim(lastName);
 	}
 	public String getLastSecondName() {
 		return lastSecondName;
 	}
 	public void setLastSecondName(final String lastSecondName) {
-		this.lastSecondName = lastSecondName;
+		this.lastSecondName = TextHelper.applyTrim(lastSecondName);
 	}
 	public long getPhone() {
 		return phone;
@@ -70,7 +74,7 @@ public class PostulanteEntity extends DomainEntity {
 		return sex;
 	}
 	public void setSex(final String sex) {
-		this.sex = sex;
+		this.sex = TextHelper.applyTrim(sex);
 	}
 
 	public CityEntity getCity() {
@@ -86,4 +90,10 @@ public class PostulanteEntity extends DomainEntity {
 	public void setTipoDocumento(final TipoDocumentoEntity tipoDocumento) {
 		this.tipoDocumento = ObjectHelper.getDefault(tipoDocumento, new TipoDocumentoEntity());
 	}
+
+	@Override
+	protected UUID getId() {
+		return super.getId();
+	}
+	
 }

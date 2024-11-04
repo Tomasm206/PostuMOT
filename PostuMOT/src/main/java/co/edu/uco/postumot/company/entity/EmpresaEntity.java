@@ -2,7 +2,7 @@ package co.edu.uco.postumot.company.entity;
 
 import co.edu.uco.crosscutting.helpers.ObjectHelper;
 import co.edu.uco.crosscutting.helpers.UUIDHelper;
-import co.edu.uco.postumot.DomainEntity;
+import co.edu.uco.postumot.common.domain.DomainEntity;
 
 public class EmpresaEntity extends DomainEntity {
 	
