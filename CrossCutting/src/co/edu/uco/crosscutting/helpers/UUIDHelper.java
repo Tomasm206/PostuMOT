@@ -5,6 +5,7 @@ import java.util.UUID;
 public final class UUIDHelper {
 
 	private static final String DEFAULT_UUID_STRING = "00000000-0000-0000-0000-000000000000";
+
 	private UUIDHelper() {
 		super();
 	}
@@ -26,15 +27,18 @@ public final class UUIDHelper {
 	}
 
 	public static final boolean isDefault(final UUID value) {
-		return getDefault(value, getDefault()).equals(getDefault());
+		return isEqual(value, getDefault());
 	}
 
 	public static final boolean isDefault(final String uuidAsString) {
-		return getDefault(convertToUUID(uuidAsString), getDefault()).equals(getDefault());
+		return isDefault(convertToUUID(uuidAsString));
 	}
 
 	public static String getDefaultAsString() {
-		// TODO Auto-generated method stub
-		return null;
+		return DEFAULT_UUID_STRING;
 	}
+	public static final boolean isEqual(final UUID valueOne, final UUID valueTwo) {
+		return getDefault(valueOne, getDefault()).compareTo(getDefault(valueTwo, getDefault())) == 0;
+	}
+	
 }

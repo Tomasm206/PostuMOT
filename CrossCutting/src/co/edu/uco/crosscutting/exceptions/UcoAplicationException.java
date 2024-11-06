@@ -7,16 +7,17 @@ import co.edu.uco.crosscutting.helpers.TextHelper;
 public class UcoAplicationException extends RuntimeException {
 
 	private static final long serialVersionUID = -7682900863325465078L;
+	
 	private String userMessage;
 	private Layer layer;
-
-	public UcoAplicationException(final String userMessage, 
+	
+	public UcoAplicationException(final String userMessage,
 			final String technicalMessage,
-			final Exception rootException, 
+			final Exception rootException,
 			final Layer layer) {
-
-		super(TextHelper.applyTrim(technicalMessage), ObjectHelper.getDefault(rootException, new Exception()));
-
+		super(TextHelper.applyTrim(technicalMessage), 
+				ObjectHelper.getDefault(rootException, new Exception()));
+		
 		setUserMessage(userMessage);
 		setLayer(layer);
 	}
@@ -29,6 +30,10 @@ public class UcoAplicationException extends RuntimeException {
 		this.layer = ObjectHelper.getDefault(layer, Layer.GENERAL);
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	public String getUserMessage() {
 		return userMessage;
 	}
@@ -36,4 +41,6 @@ public class UcoAplicationException extends RuntimeException {
 	public Layer getLayer() {
 		return layer;
 	}
+	
+	
 }
