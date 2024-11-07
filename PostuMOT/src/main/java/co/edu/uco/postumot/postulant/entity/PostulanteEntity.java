@@ -14,8 +14,8 @@ public class PostulanteEntity extends DomainEntity {
 	 private String secondName;
 	 private String lastName;
 	 private String lastSecondName;
-	 private long phone;
-	 private char email;
+	 private int phone;
+	 private String email;
 	 private String sex;
 	 private TipoDocumentoEntity tipoDocumento;
 	 private CityEntity city;
@@ -61,13 +61,13 @@ public class PostulanteEntity extends DomainEntity {
 	public long getPhone() {
 		return phone;
 	}
-	public void setPhone(final long phone) {
+	public void setPhone(final int phone) {
 		this.phone = phone;
 	}
-	public char getEmail() {
+	public String getEmail() {
 		return email;
 	}
-	public void setEmail(final char email) {
+	public void setEmail(final String email) {
 		this.email = email;
 	}
 	public String getSex() {

@@ -1,16 +1,23 @@
 package co.edu.uco.postumot.postulant.dto;
 
-import java.util.UUID;
 
-import co.edu.uco.postumot.common.domain.Domain;
+import co.edu.uco.crosscutting.helpers.UUIDHelper;
+import co.edu.uco.postumot.common.domain.DomainDTO;
 
-public class TipoDocumentoDTO extends Domain{
+public class TipoDocumentoDTO extends DomainDTO{
 
 	private String name;
 	
-	protected TipoDocumentoDTO(UUID id) {
-		super(id);
-		// TODO Auto-generated constructor stub
+	protected TipoDocumentoDTO() {
+		super(UUIDHelper.getDefaultAsString());
+	}
+	
+	public static final TipoDocumentoDTO create() {
+		return new TipoDocumentoDTO();
+	}
+
+	public String getName() {
+		return name;
 	}
 	
 }

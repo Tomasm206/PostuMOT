@@ -1,6 +1,5 @@
 package co.edu.uco.postumot.geographies.dto;
 
-import co.edu.uco.crosscutting.helpers.TextHelper;
 import co.edu.uco.crosscutting.helpers.UUIDHelper;
 import co.edu.uco.postumot.common.domain.DomainDTO;
 
@@ -10,22 +9,14 @@ public class CountryDTO extends DomainDTO {
 
 	public CountryDTO() {
 		super(UUIDHelper.getDefaultAsString());
-		setName(TextHelper.EMPTY);
 	}
 
 	public static final CountryDTO create() {
 		return new CountryDTO();
-
 	}
 
 	public String getName() {
 		return name;
-	}
-
-	public CountryDTO setName(final String name) {
-		this.name = TextHelper.applyTrim(name);
-		return this;
-
 	}
 
 	public CountryDTO setId(final String id) {
