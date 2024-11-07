@@ -1,9 +1,10 @@
 package co.edu.uco.postumot.geografias.crosscutting.exceptions;
 
-import co.edu.uco.crosscutting.exceptions.UcoApplicationException;
+
+import co.edu.uco.crosscutting.exceptions.UcoAplicationException;
 import co.edu.uco.crosscutting.exceptions.enums.Layer;
 
-public class UcoBetException extends UcoApplicationException {
+public class UcoBetException extends UcoAplicationException {
 
 	private static final long serialVersionUID = 1L;
 
