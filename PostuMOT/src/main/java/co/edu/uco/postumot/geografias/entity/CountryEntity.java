@@ -1,4 +1,4 @@
-package co.edu.uco.postumot.geographies.entity;
+package co.edu.uco.postumot.geografias.entity;
 
 import java.util.UUID;
 import co.edu.uco.crosscutting.helpers.TextHelper;

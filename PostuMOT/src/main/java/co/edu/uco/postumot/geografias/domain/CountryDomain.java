@@ -1,4 +1,4 @@
-package co.edu.uco.postumot.geographies.domain;
+package co.edu.uco.postumot.geografias.domain;
 
 import java.util.UUID;
 
@@ -15,12 +15,12 @@ public class CountryDomain extends Domain {
 		setName(name);
 	}
 
-	public static final CountryDomain create(final UUID id, final String name) {
+	public static CountryDomain create(final UUID id, final String name) {
 		return new CountryDomain(id, name);
 	}
 
 //	Sin modificador de acceso, mismo paquete
-	static final CountryDomain create() {
+	public static CountryDomain create() {
 		return new CountryDomain(UUIDHelper.getDefault(), TextHelper.EMPTY);
 	}
 

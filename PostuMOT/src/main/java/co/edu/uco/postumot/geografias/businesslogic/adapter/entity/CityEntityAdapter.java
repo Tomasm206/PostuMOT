@@ -1,19 +1,18 @@
 package co.edu.uco.postumot.geografias.businesslogic.adapter.entity;
 
-import co.edu.uco.ucobet.businesslogic.adapter.Adapter;
-import co.edu.uco.ucobet.domain.CityDomain;
-import co.edu.uco.ucobet.entity.CityEntity;
+import java.util.List;
+
+import co.edu.uco.postumot.geografias.businesslogic.adapter.Adapter;
+
+
+
 
 public final class CityEntityAdapter implements Adapter<CityEntity, CityDomain> {
 
 	private static final Adapter<CityEntity, CityDomain> instance = new CityEntityAdapter();
-
+	
 	private CityEntityAdapter() {
-
-	}
-
-	public static Adapter<CityEntity, CityDomain> getCityEntityAdapter() {
-		return instance;
+		
 	}
 
 	@Override
@@ -28,6 +27,14 @@ public final class CityEntityAdapter implements Adapter<CityEntity, CityDomain> 
 		return null;
 	}
 
+	public static CityEntityAdapter getCityEntityAdapter() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-
+	@Override
+	public List<CityDomain> adaptTarget(List<CityEntity> data) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

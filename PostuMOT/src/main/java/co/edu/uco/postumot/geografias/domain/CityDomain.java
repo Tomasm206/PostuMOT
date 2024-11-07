@@ -1,4 +1,4 @@
-package co.edu.uco.postumot.geographies.domain;
+package co.edu.uco.postumot.geografias.domain;
 
 import java.util.UUID;
 
@@ -6,6 +6,7 @@ import co.edu.uco.crosscutting.helpers.ObjectHelper;
 import co.edu.uco.crosscutting.helpers.TextHelper;
 import co.edu.uco.crosscutting.helpers.UUIDHelper;
 import co.edu.uco.postumot.common.domain.Domain;
+import co.edu.uco.postumot.geographies.domain.StateDomain;
 
 public class CityDomain extends Domain {
 

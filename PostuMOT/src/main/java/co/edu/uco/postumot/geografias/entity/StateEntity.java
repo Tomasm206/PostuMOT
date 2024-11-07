@@ -1,4 +1,4 @@
-package co.edu.uco.postumot.geographies.entity;
+package co.edu.uco.postumot.geografias.entity;
 
 import java.util.UUID;
 
@@ -7,15 +7,16 @@ import co.edu.uco.crosscutting.helpers.TextHelper;
 import co.edu.uco.crosscutting.helpers.UUIDHelper;
 import co.edu.uco.postumot.common.domain.DomainEntity;
 
-public class CityEntity extends DomainEntity {
+public class StateEntity extends DomainEntity {
 
 	private String name;
-	private StateEntity state;
-
-	public CityEntity() {
+	private CountryEntity country;
+	
+	public StateEntity() {
 		super(UUIDHelper.getDefault());
 		setName(TextHelper.EMPTY);
-		setState(new StateEntity());
+		setCountry(new CountryEntity());
+		
 	}
 
 	public String getName() {
@@ -24,26 +25,21 @@ public class CityEntity extends DomainEntity {
 
 	public void setName(final String name) {
 		this.name = TextHelper.applyTrim(name);
-
 	}
-
 	@Override
 	public void setId(final UUID id) {
 		super.setId(id);
-
 	}
-
 	@Override
 	public UUID getId() {
 		return super.getId();
 	}
 
-	public StateEntity getState() {
-		return state;
+	public CountryEntity getCountry() {
+		return country;
 	}
 
-	public void setState(final StateEntity state) {
-		this.state = ObjectHelper.getDefault(state, new StateEntity());
+	public void setCountry(final CountryEntity country) {
+		this.country = ObjectHelper.getDefault(country, new CountryEntity());
 	}
-
 }

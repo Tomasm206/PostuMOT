@@ -59,5 +59,4 @@ public class TextHelper {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

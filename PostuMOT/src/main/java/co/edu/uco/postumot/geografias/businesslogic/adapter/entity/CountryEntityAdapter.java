@@ -9,7 +9,7 @@ import co.edu.uco.ucobet.entity.CountryEntity;
 
 public class CountryEntityAdapter implements Adapter<CountryDomain, CountryEntity> {
 
-	private static final Adapter<CountryDomain, CountryEntity> instance = new CountryEntityAdapter();
+	private static final CountryEntityAdapter instance = new CountryEntityAdapter();
 
 	private CountryEntityAdapter() {
 
