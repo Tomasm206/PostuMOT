@@ -1,4 +1,4 @@
-package co.edu.uco.postumot.geographies.data.dao;
+package co.edu.uco.postumot.geografias.data.dao;
 
 import java.util.UUID;
 

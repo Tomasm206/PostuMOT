@@ -1,9 +1,7 @@
 package co.edu.uco.postumot.geografias.data.dao;
 
 import co.edu.uco.postumot.geografias.data.dao.enums.DAOSource;
-import co.edu.uco.postumot.geographies.data.dao.CityDAO;
-import co.edu.uco.postumot.geographies.data.dao.CountryDAO;
-import co.edu.uco.postumot.geographies.data.dao.StateDAO;
+
 
 public abstract class DAOFactory {
 
