@@ -92,7 +92,7 @@ public class PostulanteEntity extends DomainEntity {
 	}
 
 	@Override
-	protected UUID getId() {
+	public UUID getId() {
 		return super.getId();
 	}
 	
