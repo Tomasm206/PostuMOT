@@ -19,14 +19,23 @@ public final class PostulantePostgreSqlDAO extends SqlDAO implements PostulanteD
 	@Override
 	public void create(final PostulanteEntity data) {
 		final StringBuilder statement = new StringBuilder();
-		statement.append("INSERT INTO Postulante(id, name, state) VALUES (?, ?, ?)");//revisar
+		statement.append("INSERT INTO postulante(id, documento, primernombre, segundonombre, primerapellido"
+				+ "segundoapellido,telefono,correo,genero,city_id,tipodocumento_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 		try (final var preparedStatement = getConnection().prepareStatement(statement.toString())) {
 
 			preparedStatement.setObject(1, data.getId());
-			preparedStatement.setString(2, data.getFirstName());
-			preparedStatement.setObject(3, data.getLastName());
-
+			preparedStatement.setInt(2, data.getDocumento());
+			preparedStatement.setString(3, data.getFirstName());
+			preparedStatement.setString(4, data.getSecondName());
+			preparedStatement.setString(5, data.getLastName());
+			preparedStatement.setString(6, data.getLastSecondName());
+			preparedStatement.setLong(7, data.getPhone());
+			preparedStatement.setString(8, data.getEmail());
+			preparedStatement.setString(9, data.getEmail());
+			preparedStatement.setString(10, data.getSex());
+			preparedStatement.setObject(11, data.getCity().getId());
+			preparedStatement.setObject(12, data.getTipoDocumento().getId());
 			preparedStatement.executeUpdate();
 
 		} catch (final SQLException exception) {
