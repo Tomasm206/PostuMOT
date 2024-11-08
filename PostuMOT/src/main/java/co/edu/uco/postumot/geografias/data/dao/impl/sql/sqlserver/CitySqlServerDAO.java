@@ -5,10 +5,12 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.UUID;
 
-import co.edu.uco.ucobet.crosscutting.exceptions.DataUcoBetException;
-import co.edu.uco.ucobet.data.dao.CityDAO;
-import co.edu.uco.ucobet.data.dao.impl.sql.SqlDAO;
-import co.edu.uco.ucobet.entity.CityEntity;
+import co.edu.uco.postumot.common.crosscutting.exception.DataPostuMOTException;
+import co.edu.uco.postumot.common.data.dao.impl.sql.SqlDAO;
+import co.edu.uco.postumot.geografias.data.dao.CityDAO;
+import co.edu.uco.postumot.geografias.entity.CityEntity;
+
+
 
 public final class CitySqlServerDAO extends SqlDAO implements CityDAO {
 
@@ -34,7 +36,7 @@ public final class CitySqlServerDAO extends SqlDAO implements CityDAO {
 			var userMessage = "Se ha presentado un problema tratando de llevar a cabo el registro de la información del nuevo país. Por favor intente de nuevo y si el problema persiste reporte la novedad...";
 			var technicalMessage = "Se ha presentado un problema al tratar de registrar la informaciòn del nuevo país en la base de datos SQL Server. Por favor valide el log de errores para encontrar mayores detalles del problema presentado...";
 
-			throw DataUcoBetException.crear(userMessage, technicalMessage, exception);
+			throw DataPostuMOTException.crear(userMessage, technicalMessage, exception);
 		}
 
 	}
@@ -68,5 +70,4 @@ public final class CitySqlServerDAO extends SqlDAO implements CityDAO {
 		// TODO Auto-generated method stub
 
 	}
-
 }
