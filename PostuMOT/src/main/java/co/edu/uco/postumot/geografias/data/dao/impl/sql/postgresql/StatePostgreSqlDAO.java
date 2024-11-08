@@ -1,4 +1,4 @@
-package co.edu.uco.postumot.geografias.data.dao.impl.sql.sqlserver;
+package co.edu.uco.postumot.geografias.data.dao.impl.sql.postgresql;
 
 import java.sql.Connection;
 import java.util.List;
@@ -9,9 +9,9 @@ import co.edu.uco.postumot.geografias.data.dao.StateDAO;
 import co.edu.uco.postumot.geografias.entity.StateEntity;
 
 
-public class StateSqlServerDAO extends SqlDAO implements StateDAO {
+public class StatePostgreSqlDAO extends SqlDAO implements StateDAO {
 
-	protected StateSqlServerDAO(final Connection connection) {
+	protected StatePostgreSqlDAO(final Connection connection) {
 		super(connection);
 	}
 

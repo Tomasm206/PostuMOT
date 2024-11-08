@@ -10,7 +10,7 @@ public class TipoDocumentoEntity extends DomainEntity{
 	
 	private String name;
 	
-	protected TipoDocumentoEntity() {
+	public TipoDocumentoEntity() {
 		super(UUIDHelper.getDefault());
 		setName(TextHelper.EMPTY);
 	}
@@ -24,12 +24,12 @@ public class TipoDocumentoEntity extends DomainEntity{
 	}
 
 	@Override
-	protected UUID getId() {
+	public UUID getId() {
 		return super.getId();
 	}
 
 	@Override
-	protected void setId(final UUID id) {
+	public void setId(final UUID id) {
 		// TODO Auto-generated method stub
 		super.setId(id);
 	}
