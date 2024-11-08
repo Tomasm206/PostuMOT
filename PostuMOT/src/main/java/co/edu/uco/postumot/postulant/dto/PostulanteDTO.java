@@ -4,7 +4,7 @@ import co.edu.uco.crosscutting.helpers.ObjectHelper;
 import co.edu.uco.crosscutting.helpers.TextHelper;
 import co.edu.uco.crosscutting.helpers.UUIDHelper;
 import co.edu.uco.postumot.common.domain.DomainDTO;
-import co.edu.uco.postumot.geographies.dto.CityDTO;
+import co.edu.uco.postumot.geografias.dto.CityDTO;
 
 public class PostulanteDTO extends DomainDTO{
 	

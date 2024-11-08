@@ -6,7 +6,7 @@ import co.edu.uco.crosscutting.helpers.ObjectHelper;
 import co.edu.uco.crosscutting.helpers.TextHelper;
 import co.edu.uco.crosscutting.helpers.UUIDHelper;
 import co.edu.uco.postumot.common.domain.DomainEntity;
-import co.edu.uco.postumot.geographies.entity.CityEntity;
+import co.edu.uco.postumot.geografias.entity.CityEntity;
 
 public class PostulanteEntity extends DomainEntity {
 	

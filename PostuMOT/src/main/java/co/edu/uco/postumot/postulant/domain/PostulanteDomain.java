@@ -5,7 +5,7 @@ import java.util.UUID;
 import co.edu.uco.crosscutting.helpers.TextHelper;
 import co.edu.uco.crosscutting.helpers.UUIDHelper;
 import co.edu.uco.postumot.common.domain.Domain;
-import co.edu.uco.postumot.geographies.domain.CityDomain;
+import co.edu.uco.postumot.geografias.domain.CityDomain;
 
 public class PostulanteDomain extends Domain {
 
