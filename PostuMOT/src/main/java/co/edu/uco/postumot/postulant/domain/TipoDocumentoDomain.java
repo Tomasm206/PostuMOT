@@ -19,7 +19,7 @@ public class TipoDocumentoDomain extends Domain{
 		return new TipoDocumentoDomain(id, name);
 	}
 	
-	static final TipoDocumentoDomain create() {
+	public static final TipoDocumentoDomain create() {
 		return new TipoDocumentoDomain(UUIDHelper.getDefault(), TextHelper.EMPTY);
 	}
 

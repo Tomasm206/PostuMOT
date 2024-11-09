@@ -1,1 +1,63 @@
-<p>register works!</p>
+<form action="">
+    <h2>REGISTRAR USUARIO</h2>
+    <div>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+">
+    </div>
+    <div>
+        <label for="secondname">Segundo Nombre:</label>
+        <input type="text" id="secondname" name="secondname" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+">
+    </div>
+    <div>
+        <label for="firstsurname">Primer Apellido:</label>
+        <input type="text" id="firstsurname" name="firstsurname" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+">
+    </div>
+    <div>
+        <label for="secondsurname">Segundo Apellido:</label>
+        <input type="text" id="secondsurname" name="secondsurname" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+">
+    </div>
+    <div>
+        <label for="typeid">Tipo De Identificación:</label>
+        <select id="typeid" name="typeid" required>
+            <option value="">Seleccione</option>
+            <option value="cedula">Cédula de Ciudadanía</option>
+            <option value="tarjeta">Tarjeta de Identidad</option>
+            <option value="cedulaExtranjera">Cédula de Extranjeria</option>
+            <option value="pasaporte">Pasaporte</option>
+        </select>
+    </div>
+    <div>
+        <label for="idnumber">Número de Identificación:</label>
+        <input type="text" id="idnumber" name="idnumber" required pattern="\d{8,10}">
+    </div>
+    <div>
+        <label for="cell">Celular:</label>
+        <input type="tel" id="cell" name="cell" required pattern="\d{10}">
+    </div>
+    <div>
+        <label for="emergencycell">Celular De Emergencia:</label>
+        <input type="tel" id="emergencycell" name="emergencycell" required pattern="\d{10}">
+    </div>
+    <div>
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required minlength="15" maxlength="50">
+    </div>
+    <div>
+        <label for="date">Fecha De Nacimiento:</label>
+        <input type="date" id="date" name="date" required>
+    </div>
+    <div>
+        <label for="eps">EPS:</label>
+        <select id="eps" name="eps" required>
+            <option value="">Seleccione</option>
+            <option value="sura">Sura</option>
+            <option value="saviaSalud">Savia Salud</option>
+            <option value="nuevaEPS">Nueva EPS</option>
+            <option value="cooSalud">CooSalud</option>
+            <option value="n/a">N/A</option>
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="ACEPTAR">
+    </div>
+</form>

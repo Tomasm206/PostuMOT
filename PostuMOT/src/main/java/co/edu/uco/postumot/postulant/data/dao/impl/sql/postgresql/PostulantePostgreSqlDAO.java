@@ -29,7 +29,7 @@ public final class PostulantePostgreSqlDAO extends SqlDAO implements PostulanteD
 	public void create(final PostulanteEntity data) {
 		final StringBuilder statement = new StringBuilder();
 		statement.append(
-				"INSERT INTO postulante(id, documento, primernombre, segundonombre, primerapellido, segundoapellido, telefono, correo, genero, city_id, tipodocumento_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+				"INSERT INTO postulante(id, documento, primernombre, segundonombre, primerapellido, segundoapellido, telefono, correo, genero, tipodocumento_id, city_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 		try (final var preparedStatement = getConnection().prepareStatement(statement.toString())) {
 
@@ -42,8 +42,9 @@ public final class PostulantePostgreSqlDAO extends SqlDAO implements PostulanteD
 			preparedStatement.setLong(7, data.getPhone());
 			preparedStatement.setString(8, data.getEmail());
 			preparedStatement.setString(9, data.getSex());
-			preparedStatement.setObject(10, data.getCity().getId());
 			preparedStatement.setObject(11, data.getTipoDocumento().getId());
+			preparedStatement.setObject(10, data.getCity().getId());
+			
 			preparedStatement.executeUpdate();
 
 		} catch (final SQLException exception) {

@@ -11,7 +11,7 @@ public class DomainDTO {
 		setIdentifier(id);
 	}
 
-	protected String getId() {
+	public String getId() {
 		return id;
 	}
 

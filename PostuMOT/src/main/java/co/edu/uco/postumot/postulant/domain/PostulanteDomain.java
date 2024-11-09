@@ -8,7 +8,8 @@ import co.edu.uco.postumot.common.domain.Domain;
 import co.edu.uco.postumot.geografias.domain.CityDomain;
 
 public class PostulanteDomain extends Domain {
-
+	
+	private int documento;
     private String firstName;
     private String secondName;
     private String lastName;
@@ -19,9 +20,10 @@ public class PostulanteDomain extends Domain {
     private TipoDocumentoDomain tipoDocumento;
     private CityDomain city;
 
-    protected PostulanteDomain(final UUID id, final String firstName, final String secondName, final String lastName, final String lastSecondName,
+    protected PostulanteDomain(final UUID id, final int documento,final String firstName, final String secondName, final String lastName, final String lastSecondName,
             final int phone, final String email, final String sex, final TipoDocumentoDomain tipoDocumento, final CityDomain city) {
         super(id);
+        setDocumento(documento);
         setFirstName(firstName);
         setSecondName(secondName);
         setLastName(lastName);
@@ -38,15 +40,16 @@ public class PostulanteDomain extends Domain {
         return super.getId();
     }
 
-    public static final PostulanteDomain crear(final UUID id, final String firstName, final String secondName, final String lastName,
+    public static final PostulanteDomain create(final UUID id, final int documento,final String firstName, final String secondName, final String lastName,
     		final String lastSecondName, final int phone, final String email, final String sex, final TipoDocumentoDomain tipoDocumento,
             final CityDomain city) {
-        return new PostulanteDomain(id, firstName, secondName, lastName, lastSecondName, phone, email, sex, tipoDocumento, city);
+        return new PostulanteDomain(id, documento, firstName, secondName, lastName, lastSecondName, phone, email, sex, tipoDocumento, city);
     }
 
-    public static final PostulanteDomain crear() {
+    public static final PostulanteDomain create() {
         return new PostulanteDomain(
             UUIDHelper.getDefault(), 
+            0,
             TextHelper.EMPTY,
             TextHelper.EMPTY,
             TextHelper.EMPTY,
@@ -54,8 +57,8 @@ public class PostulanteDomain extends Domain {
             0,               
             TextHelper.EMPTY,
             TextHelper.EMPTY,
-            TipoDocumentoDomain.create(), 
-            CityDomain.create()
+            TipoDocumentoDomain.create(UUIDHelper.getDefault(),null), 
+            CityDomain.create(UUIDHelper.getDefault(), null, null)
         );
     }
 
@@ -129,6 +132,14 @@ public class PostulanteDomain extends Domain {
 
 	public void setCity(CityDomain city) {
 		this.city = city;
+	}
+
+	public int getDocumento() {
+		return documento;
+	}
+
+	public void setDocumento(final int documento) {
+		this.documento = documento;
 	}
     
 }

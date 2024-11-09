@@ -4,11 +4,12 @@ import co.edu.uco.crosscutting.helpers.ObjectHelper;
 import co.edu.uco.crosscutting.helpers.TextHelper;
 import co.edu.uco.crosscutting.helpers.UUIDHelper;
 import co.edu.uco.postumot.common.domain.DomainDTO;
+import co.edu.uco.postumot.geografias.domain.CityDomain;
 import co.edu.uco.postumot.geografias.dto.CityDTO;
 
 public class PostulanteDTO extends DomainDTO{
 	
-	
+	private int documento;
 	private String firstName;
     private String secondName;
     private String lastName;
@@ -21,6 +22,7 @@ public class PostulanteDTO extends DomainDTO{
 	
 	protected PostulanteDTO() {
 		super(UUIDHelper.getDefaultAsString());
+		setDocumento(documento);
 		setFirstName(firstName);
 		setSecondName(secondName);
 		setLastName(lastName);
@@ -29,7 +31,11 @@ public class PostulanteDTO extends DomainDTO{
 		setEmail(email);
 		setSex(sex);
 		setTipoDocumento(tipoDocumento);
-//		setCiudad(ciudad);
+		setCiudad(ciudad);
+	}
+	
+	public static final PostulanteDTO create() {
+		return new PostulanteDTO();
 	}
 
 	public String getFirstName() {
@@ -100,8 +106,21 @@ public class PostulanteDTO extends DomainDTO{
 		return ciudad;
 	}
 
-//	public void setCiudad(CityDTO ciudad) {
-//		this.ciudad = ciudad;
+	public int getDocumento() {
+		return documento;
+	}
+
+	public void setDocumento(int documento) {
+		this.documento = documento;
+	}
+
+	public void setCiudad(final CityDTO ciudad) {
+		this.ciudad = ObjectHelper.getDefault(ciudad, CityDTO.create());
+	}
+
+//	public PostulanteDTO setId(final String id) {
+//		// TODO Auto-generated method stub
+//		return this.setId(id);
 //	}
 	
 }
