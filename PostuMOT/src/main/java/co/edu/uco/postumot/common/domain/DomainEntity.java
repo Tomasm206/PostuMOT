@@ -15,7 +15,7 @@ public class DomainEntity {
 		return id;
 	}
 
-	protected void setId(final UUID id) {
+	public void setId(final UUID id) {
 		this.id = UUIDHelper.getDefault(id, UUIDHelper.getDefault());
 	}
 

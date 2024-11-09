@@ -43,9 +43,7 @@ public final class TipoDocumentoPostgreSqlDAO extends SqlDAO implements TipoDocu
 		 
 		
 		createSelect(statement);
-		createFrom(statement);
 		createWhere(statement, filter, parameters);
-		createOrderBy(statement);
 		
 		try (final var preparedStatement = getConnection().prepareStatement(statement.toString())){
 			
@@ -86,14 +84,6 @@ public final class TipoDocumentoPostgreSqlDAO extends SqlDAO implements TipoDocu
 	
 	private void createSelect(final StringBuilder statement) {
 		statement.append("SELECT id,name ");
-	}
-
-	private void createFrom(final StringBuilder statement) {
-		statement.append("FROM Country ");
-	}
-
-	private void createOrderBy(final StringBuilder statement) {
-		statement.append("ORDER BY name ASC ");
 	}
 
 	private void createWhere(final StringBuilder statement, final TipoDocumentoEntity filter, final List<Object> parameters) {

@@ -21,7 +21,7 @@ public class PostulanteEntity extends DomainEntity {
 	private TipoDocumentoEntity tipoDocumento;
 	private CityEntity city;
 
-	protected PostulanteEntity() {
+	public PostulanteEntity() {
 		super(UUIDHelper.getDefault());
 		setTipoDocumento(tipoDocumento);
 		setDocumento(documento);
