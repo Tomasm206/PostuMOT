@@ -15,7 +15,7 @@ public class PostulanteDomain extends Domain {
     private String lastName;
     private String lastSecondName;
     private int phone;
-    private String email; // Email definido como String
+    private String email; 
     private String sex;
     private TipoDocumentoDomain tipoDocumento;
     private CityDomain city;

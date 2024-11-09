@@ -4,10 +4,9 @@ import co.edu.uco.crosscutting.helpers.ObjectHelper;
 import co.edu.uco.crosscutting.helpers.TextHelper;
 import co.edu.uco.crosscutting.helpers.UUIDHelper;
 import co.edu.uco.postumot.common.domain.DomainDTO;
-import co.edu.uco.postumot.geografias.domain.CityDomain;
 import co.edu.uco.postumot.geografias.dto.CityDTO;
 
-public class PostulanteDTO extends DomainDTO{
+public class PostulanteDTO extends DomainDTO {
 	
 	private int documento;
 	private String firstName;
@@ -15,7 +14,7 @@ public class PostulanteDTO extends DomainDTO{
     private String lastName;
     private String lastSecondName;
     private int phone;
-    private String email; // Email definido como String
+    private String email; 
     private String sex;
 	private TipoDocumentoDTO tipoDocumento;
 	private CityDTO ciudad;
@@ -42,64 +41,72 @@ public class PostulanteDTO extends DomainDTO{
 		return firstName;
 	}
 
-	public void setFirstName(String firstName) {
+	public PostulanteDTO setFirstName(String firstName) {
 		this.firstName = TextHelper.applyTrim(firstName);
+		return this;
 	}
 
 	public String getSecondName() {
 		return secondName;
 	}
 
-	public void setSecondName(String secondName) {
-		this.firstName = TextHelper.applyTrim(secondName);
+	public PostulanteDTO setSecondName(String secondName) {
+		this.secondName = TextHelper.applyTrim(secondName);
+		return this;
 	}
 
 	public String getLastName() {
 		return lastName;
 	}
 
-	public void setLastName(String lastName) {
-		this.firstName = TextHelper.applyTrim(lastName);
+	public PostulanteDTO setLastName(String lastName) {
+		this.lastName = TextHelper.applyTrim(lastName);
+		return this;
 	}
 
 	public String getLastSecondName() {
 		return lastSecondName;
 	}
 
-	public void setLastSecondName(String lastSecondName) {
+	public PostulanteDTO setLastSecondName(String lastSecondName) {
 		this.lastSecondName = TextHelper.applyTrim(lastSecondName);
+		return this;
 	}
 
 	public int getPhone() {
 		return phone;
 	}
 
-	public void setPhone(int phone) {
+	public PostulanteDTO setPhone(int phone) {
 		this.phone = phone;
+		return this;
 	}
 
 	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(String email) {
+	public PostulanteDTO setEmail(String email) {
 		this.email = TextHelper.applyTrim(email);
+		return this;
 	}
 
 	public String getSex() {
 		return sex;
 	}
 
-	public void setSex(String sex) {
+	public PostulanteDTO setSex(String sex) {
 		this.sex = TextHelper.applyTrim(sex);
+		return this;
 	}
 
 	public TipoDocumentoDTO getTipoDocumento() {
 		return tipoDocumento;
 	}
 	
-	public void setTipoDocumento(final TipoDocumentoDTO tipoDocumento) {
+	public PostulanteDTO setTipoDocumento(final TipoDocumentoDTO tipoDocumento) {
 		this.tipoDocumento = ObjectHelper.getDefault(tipoDocumento, TipoDocumentoDTO.create());
+		return this;
 	}
 
 	public CityDTO getCiudad() {
@@ -110,17 +117,14 @@ public class PostulanteDTO extends DomainDTO{
 		return documento;
 	}
 
-	public void setDocumento(int documento) {
+	public PostulanteDTO setDocumento(int documento) {
 		this.documento = documento;
+		return this;
 	}
 
-	public void setCiudad(final CityDTO ciudad) {
+	public PostulanteDTO setCiudad(final CityDTO ciudad) {
 		this.ciudad = ObjectHelper.getDefault(ciudad, CityDTO.create());
+		return this;
 	}
-
-//	public PostulanteDTO setId(final String id) {
-//		// TODO Auto-generated method stub
-//		return this.setId(id);
-//	}
-	
 }
+

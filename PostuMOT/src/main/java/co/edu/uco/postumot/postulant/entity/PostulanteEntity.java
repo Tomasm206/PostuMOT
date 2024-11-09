@@ -23,8 +23,8 @@ public class PostulanteEntity extends DomainEntity {
 
 	public PostulanteEntity() {
 		super(UUIDHelper.getDefault());
-		setTipoDocumento(tipoDocumento);
 		setDocumento(documento);
+		setTipoDocumento(tipoDocumento);
 		setFirstName(firstName);
 		setSecondName(secondName);
 		setLastName(lastName);
@@ -68,7 +68,7 @@ public class PostulanteEntity extends DomainEntity {
 		this.lastSecondName = TextHelper.applyTrim(lastSecondName);
 	}
 
-	public long getPhone() {
+	public int getPhone() {
 		return phone;
 	}
 
@@ -96,16 +96,18 @@ public class PostulanteEntity extends DomainEntity {
 		return city;
 	}
 
-	public void setCity(final CityEntity city) {
+	public PostulanteEntity setCity(final CityEntity city) {
 		this.city = ObjectHelper.getDefault(city, new CityEntity());
+		return this;
 	}
 
 	public TipoDocumentoEntity getTipoDocumento() {
 		return tipoDocumento;
 	}
 
-	public void setTipoDocumento(final TipoDocumentoEntity tipoDocumento) {
+	public PostulanteEntity setTipoDocumento(final TipoDocumentoEntity tipoDocumento) {
 		this.tipoDocumento = ObjectHelper.getDefault(tipoDocumento, new TipoDocumentoEntity());
+		return this;
 	}
 
 	@Override

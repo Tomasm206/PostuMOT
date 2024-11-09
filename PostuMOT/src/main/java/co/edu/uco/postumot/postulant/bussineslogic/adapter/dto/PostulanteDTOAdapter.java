@@ -12,6 +12,7 @@ import co.edu.uco.postumot.geografias.dto.CityDTO;
 import co.edu.uco.postumot.postulant.domain.PostulanteDomain;
 import co.edu.uco.postumot.postulant.domain.TipoDocumentoDomain;
 import co.edu.uco.postumot.postulant.dto.PostulanteDTO;
+import co.edu.uco.postumot.postulant.dto.TipoDocumentoDTO;
 
 public final class PostulanteDTOAdapter implements Adapter<PostulanteDomain, PostulanteDTO> {
 
@@ -21,33 +22,37 @@ public final class PostulanteDTOAdapter implements Adapter<PostulanteDomain, Pos
 
 	}
 
-	public static Adapter<PostulanteDomain, PostulanteDTO> getCityDTOAdapter() {
+	public static Adapter<PostulanteDomain, PostulanteDTO> getPostulanteDTOAdapter() {
 		return instance;
 	}
 
 	@Override
 	public PostulanteDomain adaptSource(final PostulanteDTO data) {
 		var dtoToAdapt = ObjectHelper.getDefault(data, PostulanteDTO.create());
-		return PostulanteDomain.create(UUIDHelper.convertToUUID(dtoToAdapt.getId()), data.getDocumento(),data.getFirstName(), data.getSecondName(), data.getLastName(),
-				data.getLastSecondName(),data.getPhone(),data.getEmail(),data.getSex(), TipoDocumentoDomain.create(), CityDomain.create());
+		return PostulanteDomain.create(UUIDHelper.convertToUUID(dtoToAdapt.getId()), data.getDocumento(),
+				data.getFirstName(), data.getSecondName(), data.getLastName(), data.getLastSecondName(),
+				data.getPhone(), data.getEmail(), data.getSex(), TipoDocumentoDomain.create(), CityDomain.create());
 	}
-	
+
 	@Override
 	public PostulanteDTO adaptTarget(final PostulanteDomain data) {
-//		var domainToAdapt = ObjectHelper.getDefault(data, PostulanteDomain.create(UUIDHelper.getDefault(),0, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY,
-//				0, TextHelper.EMPTY,TextHelper.EMPTY,null,null));
-//		return PostulanteDTO.create().setId("").setDocumento(domainToAdapt.getDocumento()).setFirstName(domainToAdapt.getFirstName());
-		return null;
-	}
+		var domainToAdapt = ObjectHelper.getDefault(data, PostulanteDomain.create(UUIDHelper.getDefault(), 0,
+				TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, 0, TextHelper.EMPTY,
+				TextHelper.EMPTY, TipoDocumentoDomain.create(), CityDomain.create()));
+
+		return PostulanteDTO.create().setDocumento(domainToAdapt.getDocumento()).setFirstName(domainToAdapt.getFirstName()).setSecondName(domainToAdapt.getSecondName())
+				.setLastName(domainToAdapt.getLastName()).setLastSecondName(domainToAdapt.getLastSecondName()).setPhone(domainToAdapt.getPhone()).setEmail(domainToAdapt.getEmail())
+				.setSex(domainToAdapt.getSex()).setTipoDocumento(TipoDocumentoDTO.create()).setCiudad(CityDTO.create());	
+	}		
 
 	@Override
 	public List<PostulanteDTO> adaptTarget(final List<PostulanteDomain> data) {
 		var results = new ArrayList<PostulanteDTO>();
-		
+
 		for (PostulanteDomain domain : data) {
 			results.add(adaptTarget(domain));
 		}
-			
+
 		return results;
 	}
 //	Basicamente convierte de domain a dto y viceversa
