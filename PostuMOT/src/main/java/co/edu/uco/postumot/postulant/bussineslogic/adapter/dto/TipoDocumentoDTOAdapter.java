@@ -7,11 +7,8 @@ import co.edu.uco.crosscutting.helpers.ObjectHelper;
 import co.edu.uco.crosscutting.helpers.TextHelper;
 import co.edu.uco.crosscutting.helpers.UUIDHelper;
 import co.edu.uco.postumot.common.bussineslogic.adapter.Adapter;
-import co.edu.uco.postumot.geografias.domain.CountryDomain;
 import co.edu.uco.postumot.geografias.dto.CountryDTO;
-import co.edu.uco.postumot.postulant.domain.PostulanteDomain;
 import co.edu.uco.postumot.postulant.domain.TipoDocumentoDomain;
-import co.edu.uco.postumot.postulant.dto.PostulanteDTO;
 import co.edu.uco.postumot.postulant.dto.TipoDocumentoDTO;
 
 public class TipoDocumentoDTOAdapter implements Adapter<TipoDocumentoDomain, TipoDocumentoDTO> {
