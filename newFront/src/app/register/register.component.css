@@ -1,11 +1,12 @@
-
-main{
-    width: 80%;
+main {
+    width: 50%;
+    height: 100vb;
     display: flex;
     justify-content: center;
     margin: auto;
-
+    background-color: #E6F0FF;
 }
+
 .form-container {
     width: 100%;
     max-width: 800px;
@@ -19,7 +20,7 @@ form {
     display: grid;
     gap: 15px;
     grid-template-columns: 1fr 1fr;
-    margin: 50px 0% ;
+    margin: 50px 0%;
 }
 
 form h2 {
