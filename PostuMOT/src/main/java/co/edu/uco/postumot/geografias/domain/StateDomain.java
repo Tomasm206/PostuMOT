@@ -23,7 +23,7 @@ public class StateDomain extends Domain {
 		return new StateDomain(id, name, country);
 	}
 	
-	static final StateDomain create () {
+	public static final StateDomain create () {
 		return new StateDomain(UUIDHelper.getDefault(), TextHelper.EMPTY, CountryDomain.create());
 	}
 	public String getName() {

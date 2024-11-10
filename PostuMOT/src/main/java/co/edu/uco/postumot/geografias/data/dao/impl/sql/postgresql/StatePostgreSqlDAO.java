@@ -11,7 +11,7 @@ import co.edu.uco.postumot.geografias.entity.StateEntity;
 
 public class StatePostgreSqlDAO extends SqlDAO implements StateDAO {
 
-	protected StatePostgreSqlDAO(final Connection connection) {
+	public StatePostgreSqlDAO(final Connection connection) {
 		super(connection);
 	}
 

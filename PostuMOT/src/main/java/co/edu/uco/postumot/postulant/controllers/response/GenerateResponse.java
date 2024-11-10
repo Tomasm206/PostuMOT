@@ -1,4 +1,4 @@
-package co.edu.uco.postumot.common.controller.response;
+package co.edu.uco.postumot.postulant.controllers.response;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 
 import co.edu.uco.postumot.postulant.controllers.response.concrete.GenericResponse;
 
-public class GenerateResponse<T>{
+public class GenerateResponse <T> {
 	
 	public static ResponseEntity<GenericResponse> generateSuccessResponse(final List<String> messages) {
 		var genericResponse = new GenericResponse();
@@ -31,4 +31,5 @@ public class GenerateResponse<T>{
 		return new ResponseEntity<>(responseWithData, HttpStatus.BAD_REQUEST);
 	}
 }
+
 

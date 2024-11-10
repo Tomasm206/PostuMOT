@@ -23,7 +23,7 @@ import co.edu.uco.postumot.geografias.entity.CountryEntity;
 
 public class CountryPostgreSqlDAO extends SqlDAO implements CountryDAO {
 
-	protected CountryPostgreSqlDAO(final Connection connection) {
+	public CountryPostgreSqlDAO(final Connection connection) {
 		super(connection);
 	}
 

@@ -1,4 +1,4 @@
-package co.edu.uco.postumot.geografias.data.dao.impl.sql.postgresql;
+package co.edu.uco.postumot.geografias.data.dao.impl.sql;
 
 import java.sql.Connection;
 
@@ -7,6 +7,9 @@ import co.edu.uco.postumot.geografias.data.dao.CityDAO;
 import co.edu.uco.postumot.geografias.data.dao.CountryDAO;
 import co.edu.uco.postumot.geografias.data.dao.DAOFactoryGeografias;
 import co.edu.uco.postumot.geografias.data.dao.StateDAO;
+import co.edu.uco.postumot.geografias.data.dao.impl.sql.postgresql.CityPostgreSqlDAO;
+import co.edu.uco.postumot.geografias.data.dao.impl.sql.postgresql.CountryPostgreSqlDAO;
+import co.edu.uco.postumot.geografias.data.dao.impl.sql.postgresql.StatePostgreSqlDAO;
 
 final class PostgreSqlDAOFactory extends DAOFactoryGeografias {
 
