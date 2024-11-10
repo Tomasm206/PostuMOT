@@ -1,6 +1,5 @@
 package co.edu.uco.postumot.postulant.bussineslogic.usecase.postulante.rule.impl;
 
-import co.edu.uco.postumot.common.bussineslogic.usecase.DAOFactory;
 import co.edu.uco.postumot.common.crosscutting.exception.BusinessLogicPostuMOTException;
 import co.edu.uco.postumot.postulant.bussineslogic.usecase.postulante.rule.PostulantesHasNoSameDocumentTypeAndNumberAssigned;
 import co.edu.uco.postumot.postulant.data.dao.DAOFactoryPostulante;
@@ -30,12 +29,4 @@ public class PostulantesHasNoSameDocumentTypeAndNumberAssignedImpl implements Po
 			throw BusinessLogicPostuMOTException.crear(userMessage);
 		}
 	}
-
-	@Override
-	public void execute(PostulanteDomain data, DAOFactory factory) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
 }

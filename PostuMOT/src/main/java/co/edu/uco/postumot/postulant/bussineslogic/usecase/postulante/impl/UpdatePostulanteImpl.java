@@ -6,7 +6,6 @@ import co.edu.uco.postumot.postulant.bussineslogic.adapter.entity.PostulanteEnti
 import co.edu.uco.postumot.postulant.bussineslogic.usecase.postulante.UpdatePostulante;
 import co.edu.uco.postumot.postulant.data.dao.DAOFactoryPostulante;
 import co.edu.uco.postumot.postulant.domain.PostulanteDomain;
-import co.edu.uco.postumot.postulant.entity.PostulanteEntity;
 
 public final class UpdatePostulanteImpl implements UpdatePostulante{
 	
@@ -17,9 +16,9 @@ public final class UpdatePostulanteImpl implements UpdatePostulante{
 	}
 	
 	@Override
-	public void execute(PostulanteDomain data) {
+	public void execute(final PostulanteDomain data) {
 		
-		var postulanteEntity = PostulanteEntityAdapter.getPostulanteEntityAdapter().adaptSource(data);
+		var postulanteEntity = PostulanteEntityAdapter.getPostulanteEntityAdapter().adaptTarget(data);
 		daoFactory.getPostulanteDAO().update(postulanteEntity);
 	}
 	

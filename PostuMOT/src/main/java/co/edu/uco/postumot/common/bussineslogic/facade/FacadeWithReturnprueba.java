@@ -1,6 +1,6 @@
 package co.edu.uco.postumot.common.bussineslogic.facade;
 
-public interface FacadeWithReturn <T,R> {
+public interface FacadeWithReturnprueba <T,R> {
 	R execute(T data);
 	
 }
