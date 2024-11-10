@@ -51,8 +51,7 @@ public class CountryPostgreSqlDAO extends SqlDAO implements CountryDAO {
 		final var statement = new StringBuilder();
 		final var parameters = new ArrayList<>();
 		final var resulSelect = new ArrayList<CountryEntity>(); // Valor de los resultados almacenados
-		var statementWasPrepared = false;
-		final var resultWasExecuted = false;
+
 
 		createSelect(statement);
 		createFrom(statement);
@@ -66,7 +65,7 @@ public class CountryPostgreSqlDAO extends SqlDAO implements CountryDAO {
 
 			}
 
-			statementWasPrepared = true;
+
 
 			ResultSet result = null; // verificar
 			while (result.next()) {

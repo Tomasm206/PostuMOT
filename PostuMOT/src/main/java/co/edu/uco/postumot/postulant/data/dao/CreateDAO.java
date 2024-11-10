@@ -1,4 +1,4 @@
-package co.edu.uco.postumot.common.data.dao;
+package co.edu.uco.postumot.postulant.data.dao;
 
 public interface CreateDAO<T> {
 

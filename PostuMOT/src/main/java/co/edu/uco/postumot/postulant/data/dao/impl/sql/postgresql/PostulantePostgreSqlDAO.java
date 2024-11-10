@@ -10,14 +10,10 @@ import java.util.UUID;
 import co.edu.uco.crosscutting.helpers.ObjectHelper;
 import co.edu.uco.crosscutting.helpers.TextHelper;
 import co.edu.uco.crosscutting.helpers.UUIDHelper;
-import co.edu.uco.postumot.common.bussineslogic.adapter.Adapter;
 import co.edu.uco.postumot.common.crosscutting.exception.DataPostuMOTException;
 import co.edu.uco.postumot.common.data.dao.impl.sql.SqlDAO;
-import co.edu.uco.postumot.geografias.entity.CityEntity;
 import co.edu.uco.postumot.postulant.data.dao.PostulanteDAO;
-import co.edu.uco.postumot.postulant.domain.TipoDocumentoDomain;
 import co.edu.uco.postumot.postulant.entity.PostulanteEntity;
-import co.edu.uco.postumot.postulant.entity.TipoDocumentoEntity;
 
 public final class PostulantePostgreSqlDAO extends SqlDAO implements PostulanteDAO {
 

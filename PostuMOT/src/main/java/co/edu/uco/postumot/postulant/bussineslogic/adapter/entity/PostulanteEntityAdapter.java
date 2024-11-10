@@ -23,7 +23,7 @@ public class PostulanteEntityAdapter implements Adapter<PostulanteDomain, Postul
 
 	}
 
-	public static Adapter<PostulanteDomain, PostulanteEntity> getCountryEntityAdapter() {
+	public static Adapter<PostulanteDomain, PostulanteEntity> getPostulanteEntityAdapter() {
 		return instance;
 	}
 

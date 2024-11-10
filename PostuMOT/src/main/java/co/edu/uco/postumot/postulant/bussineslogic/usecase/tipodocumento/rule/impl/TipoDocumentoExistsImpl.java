@@ -4,8 +4,8 @@ import java.util.UUID;
 
 import co.edu.uco.crosscutting.helpers.ObjectHelper;
 import co.edu.uco.postumot.common.crosscutting.exception.BusinessLogicPostuMOTException;
-import co.edu.uco.postumot.common.data.dao.DAOFactory;
 import co.edu.uco.postumot.postulant.bussineslogic.usecase.tipodocumento.rule.TipoDocumentoExists;
+import co.edu.uco.postumot.postulant.data.dao.DAOFactory;
 import co.edu.uco.postumot.postulant.entity.TipoDocumentoEntity;
 
 public final class TipoDocumentoExistsImpl implements TipoDocumentoExists {

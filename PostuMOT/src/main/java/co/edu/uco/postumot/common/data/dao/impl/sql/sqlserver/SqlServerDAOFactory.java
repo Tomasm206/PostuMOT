@@ -3,7 +3,13 @@ package co.edu.uco.postumot.common.data.dao.impl.sql.sqlserver;
 import java.sql.Connection;
 
 import co.edu.uco.crosscutting.helpers.SqlConnectionHelper;
-import co.edu.uco.postumot.common.data.dao.DAOFactory;
+import co.edu.uco.postumot.geografias.data.dao.CityDAO;
+import co.edu.uco.postumot.geografias.data.dao.CountryDAO;
+import co.edu.uco.postumot.geografias.data.dao.StateDAO;
+import co.edu.uco.postumot.postulant.data.dao.DAOFactory;
+import co.edu.uco.postumot.postulant.data.dao.PostulanteDAO;
+import co.edu.uco.postumot.postulant.data.dao.TipoDocumentoDAO;
+import co.edu.uco.postumot.postulant.data.dao.impl.sql.postgresql.TipoDocumentoPostgreSqlDAO;
 
 public final class SqlServerDAOFactory extends DAOFactory {
 
@@ -42,17 +48,18 @@ public final class SqlServerDAOFactory extends DAOFactory {
 
 //	@Override
 //	public CityDAO getCityDAO() {
-//		return new CitySqlServerDAO(connection);
+//		return new ();
 //	}
 //
 //	@Override
 //	public StateDAO getStateDAO() {
-//		return new StateSqlServerDAO(connection);
+//		// TODO Auto-generated method stub
+//		return null;
 //	}
 //
 //	@Override
 //	public CountryDAO getCountryDAO() {
-//		return new CountrySqlServerDAO(connection);
+//		// TODO Auto-generated method stub
+//		return null;
 //	}
-
 }
