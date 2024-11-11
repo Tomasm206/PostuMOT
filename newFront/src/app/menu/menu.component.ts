@@ -14,6 +14,12 @@ export class MenuComponent {
   goToRegister() {
     this.router.navigate(['/register']);
   }
+
+  goToVacantes() {
+    this.router.navigate(['/vacantes']);
+  }
+
 }
+
 
 
