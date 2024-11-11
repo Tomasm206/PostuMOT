@@ -1,4 +1,4 @@
-package co.edu.uco.postumot.geografias.businesslogic.facade.impl;
+package co.edu.uco.postumot.geografias.businesslogic.facade;
 
 import java.util.List;
 

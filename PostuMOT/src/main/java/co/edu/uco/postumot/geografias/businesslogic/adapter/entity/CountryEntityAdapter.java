@@ -1,5 +1,6 @@
 package co.edu.uco.postumot.geografias.businesslogic.adapter.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import co.edu.uco.crosscutting.helpers.ObjectHelper;
@@ -42,8 +43,12 @@ public class CountryEntityAdapter implements Adapter<CountryDomain, CountryEntit
 
 	@Override
 	public List<CountryEntity> adaptTarget(List<CountryDomain> data) {
-		// TODO Auto-generated method stub
-		return null;
+		var results = new ArrayList<CountryEntity>();
+		
+		for (CountryDomain domain : data) {
+			results.add(adaptTarget(domain));
+		}
+		return results;
 	}
 
 }

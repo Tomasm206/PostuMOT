@@ -8,9 +8,7 @@ import co.edu.uco.crosscutting.helpers.TextHelper;
 import co.edu.uco.crosscutting.helpers.UUIDHelper;
 import co.edu.uco.postumot.common.bussineslogic.adapter.Adapter;
 import co.edu.uco.postumot.geografias.domain.CountryDomain;
-import co.edu.uco.postumot.geografias.domain.StateDomain;
 import co.edu.uco.postumot.geografias.dto.CountryDTO;
-import co.edu.uco.postumot.geografias.dto.StateDTO;
 
 public class CountryDTOAdapter implements Adapter<CountryDomain, CountryDTO> {
 

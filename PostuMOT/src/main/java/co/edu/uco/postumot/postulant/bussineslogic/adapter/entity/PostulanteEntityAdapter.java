@@ -54,7 +54,7 @@ public class PostulanteEntityAdapter implements Adapter<PostulanteDomain, Postul
 		entityAdapted.setTipoDocumento(new TipoDocumentoEntity());
 		entityAdapted.setCity(new CityEntity());
 
-		return new PostulanteEntity();
+		return entityAdapted;
 	}
 
 	@Override

@@ -11,7 +11,6 @@ import co.edu.uco.postumot.geografias.domain.CountryDomain;
 import co.edu.uco.postumot.geografias.domain.StateDomain;
 import co.edu.uco.postumot.geografias.dto.CountryDTO;
 import co.edu.uco.postumot.geografias.dto.StateDTO;
-import co.edu.uco.postumot.postulant.domain.TipoDocumentoDomain;
 
 public class StateDTOAdapter implements Adapter<StateDomain, StateDTO> {
 
@@ -28,14 +27,14 @@ public class StateDTOAdapter implements Adapter<StateDomain, StateDTO> {
 	@Override
 	public StateDomain adaptSource(final StateDTO data) {
 		var dtoToAdapt = ObjectHelper.getDefault(data, StateDTO.create());
-		return StateDTO.create(UUIDHelper.convertToUUID(dtoToAdapt.getId()), data.getName(), CountryDomain.create());
+		return StateDomain.create(UUIDHelper.convertToUUID(dtoToAdapt.getId()), data.getName(),CountryDomain.create());
 	}
 
 	@Override
 	public StateDTO adaptTarget(final StateDomain data) {
 		var domainToAdapt = ObjectHelper.getDefault(data,
-				StateDomain.create(UUIDHelper.getDefault(), TextHelper.EMPTY, StateDomain.create()));
-		return StateDTO.create().setName(domainToAdapt.getName());
+				StateDomain.create(UUIDHelper.getDefault(), TextHelper.EMPTY, CountryDomain.create()));
+		return StateDTO.create().setId("").setName(domainToAdapt.getName()).setCountry(CountryDTO.create());
 	}
 	
 //	Basicamente convierte de domain a dto y viceversa
