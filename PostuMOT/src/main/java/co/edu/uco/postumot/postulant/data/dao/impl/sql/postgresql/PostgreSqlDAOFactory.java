@@ -7,7 +7,7 @@ import co.edu.uco.postumot.postulant.data.dao.DAOFactoryPostulante;
 import co.edu.uco.postumot.postulant.data.dao.PostulanteDAO;
 import co.edu.uco.postumot.postulant.data.dao.TipoDocumentoDAO;
 
-final class PostgreSqlDAOFactory extends DAOFactoryPostulante {
+public final class PostgreSqlDAOFactory extends DAOFactoryPostulante {
 
 	private Connection connection;
 

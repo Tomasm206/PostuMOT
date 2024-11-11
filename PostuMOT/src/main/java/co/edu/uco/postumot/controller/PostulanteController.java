@@ -1,7 +1,6 @@
-package co.edu.uco.postumot.postulant.controllers;
+package co.edu.uco.postumot.controller;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,20 +15,21 @@ import org.springframework.web.bind.annotation.RestController;
 import co.edu.uco.crosscutting.exceptions.MOTAplicationException;
 import co.edu.uco.postumot.common.controller.response.GenerateResponse;
 import co.edu.uco.postumot.common.crosscutting.exception.PostuMOTException;
+import co.edu.uco.postumot.controller.response.concrete.GenericResponse;
+import co.edu.uco.postumot.controller.response.concrete.PostulanteResponse;
 import co.edu.uco.postumot.postulant.bussineslogic.facade.postulante.impl.RegisterNewPostulanteFacadeImpl;
-import co.edu.uco.postumot.postulant.controllers.response.concrete.GenericResponse;
-import co.edu.uco.postumot.postulant.controllers.response.concrete.PostulanteResponse;
 import co.edu.uco.postumot.postulant.dto.PostulanteDTO;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/v1/postulantes")
 public final class PostulanteController {
+
 	@GetMapping("/dummy")
 	public PostulanteDTO getDummy() {
 		return PostulanteDTO.create();
 	}
 
-	@PostMapping
+	@PostMapping("/create")
 	public ResponseEntity<GenericResponse> create(@RequestBody PostulanteDTO postulante) {
 
 		var message = new ArrayList<String>();
@@ -59,8 +59,8 @@ public final class PostulanteController {
 
 		return GenerateResponse.generateSuccessResponse(message);
 	}
-	
-	@PutMapping
+
+	@PutMapping("/update")
 	public ResponseEntity<GenericResponse> update(@PathVariable String id, @RequestBody PostulanteDTO postulante) {
 		var message = new ArrayList<String>();
 
@@ -78,7 +78,7 @@ public final class PostulanteController {
 		return GenerateResponse.generateSuccessResponse(message);
 	}
 
-	@GetMapping
+	@GetMapping("/retrive")
 	public ResponseEntity<PostulanteResponse> retrive() {
 		PostulanteResponse responseWithData = new PostulanteResponse();
 		var message = new ArrayList<String>();
@@ -98,11 +98,9 @@ public final class PostulanteController {
 		return ((new GenerateResponse<PostulanteResponse>()).generateSuccessResponseWithData(responseWithData));
 	}
 
-
 	@GetMapping("/{id}")
 	public PostulanteDTO retriveById(@PathVariable int id) {
 		return getDummy().setDocumento(id);
 	}
 
 }
-

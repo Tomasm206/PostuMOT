@@ -1,9 +1,9 @@
-package co.edu.uco.postumot.postulant.controllers.response.concrete;
+package co.edu.uco.postumot.controller.response.concrete;
 
 import java.util.List;
 
-import co.edu.uco.postumot.postulant.controllers.response.Response;
-import co.edu.uco.postumot.postulant.controllers.response.ResponseWithData;
+import co.edu.uco.postumot.controller.response.Response;
+import co.edu.uco.postumot.controller.response.ResponseWithData;
 import co.edu.uco.postumot.postulant.dto.PostulanteDTO;
 
 public final class PostulanteResponse extends ResponseWithData<PostulanteDTO> {

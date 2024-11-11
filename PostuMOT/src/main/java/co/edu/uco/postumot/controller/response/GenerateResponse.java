@@ -1,11 +1,11 @@
-package co.edu.uco.postumot.postulant.controllers.response;
+package co.edu.uco.postumot.controller.response;
 
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import co.edu.uco.postumot.postulant.controllers.response.concrete.GenericResponse;
+import co.edu.uco.postumot.controller.response.concrete.GenericResponse;
 
 public class GenerateResponse <T> {
 	

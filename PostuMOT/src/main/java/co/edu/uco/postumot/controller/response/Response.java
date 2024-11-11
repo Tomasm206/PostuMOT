@@ -1,4 +1,4 @@
-package co.edu.uco.postumot.postulant.controllers.response;
+package co.edu.uco.postumot.controller.response;
 
 import java.util.ArrayList;
 import java.util.List;
