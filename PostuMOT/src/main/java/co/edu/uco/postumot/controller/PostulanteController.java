@@ -21,7 +21,7 @@ import co.edu.uco.postumot.postulant.bussineslogic.facade.postulante.impl.Regist
 import co.edu.uco.postumot.postulant.dto.PostulanteDTO;
 
 @RestController
-@RequestMapping("/api/v1/postulantes")
+@RequestMapping("/api/v1/postulante")
 public final class PostulanteController {
 
 	@GetMapping("/dummy")

@@ -11,7 +11,6 @@ import co.edu.uco.postumot.geografias.domain.CityDomain;
 import co.edu.uco.postumot.geografias.entity.CityEntity;
 import co.edu.uco.postumot.postulant.domain.PostulanteDomain;
 import co.edu.uco.postumot.postulant.domain.TipoDocumentoDomain;
-import co.edu.uco.postumot.postulant.dto.TipoDocumentoDTO;
 import co.edu.uco.postumot.postulant.entity.PostulanteEntity;
 import co.edu.uco.postumot.postulant.entity.TipoDocumentoEntity;
 
@@ -32,14 +31,15 @@ public class PostulanteEntityAdapter implements Adapter<PostulanteDomain, Postul
 		var entityToAdapt = ObjectHelper.getDefault(data, new PostulanteEntity());
 		return PostulanteDomain.create(entityToAdapt.getId(), entityToAdapt.getDocumento(), entityToAdapt.getFirstName(),
 				entityToAdapt.getSecondName(), entityToAdapt.getLastName(), entityToAdapt.getLastSecondName(), entityToAdapt.getPhone(),
-				entityToAdapt.getEmail(), entityToAdapt.getSex(), TipoDocumentoDomain.create(), CityDomain.create());
+				entityToAdapt.getEmail(), entityToAdapt.getSex(), TipoDocumentoDomain.create(data.getId(), entityToAdapt.getTipoDocumento().getName()), 
+				CityDomain.create(data.getId(), entityToAdapt.getCity().getName()));
 	}
 
 	@Override
 	public PostulanteEntity adaptTarget(final PostulanteDomain data) {
 		var domainToAdapt = ObjectHelper.getDefault(data, PostulanteDomain.create(UUIDHelper.getDefault(), 0,
 				TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, 0, TextHelper.EMPTY,
-				TextHelper.EMPTY, TipoDocumentoDomain.create(), CityDomain.create()));
+				TextHelper.EMPTY, TipoDocumentoDomain.create(data.getId(), TextHelper.EMPTY), CityDomain.create(data.getId(), TextHelper.EMPTY)));
 
 		var entityAdapted = new PostulanteEntity();
 		entityAdapted.setId(domainToAdapt.getId());

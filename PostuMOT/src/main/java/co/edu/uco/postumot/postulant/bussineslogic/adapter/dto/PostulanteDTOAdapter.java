@@ -29,17 +29,19 @@ public final class PostulanteDTOAdapter implements Adapter<PostulanteDomain, Pos
 	@Override
 	public PostulanteDomain adaptSource(final PostulanteDTO data) {
 		var dtoToAdapt = ObjectHelper.getDefault(data, PostulanteDTO.create());
-		return PostulanteDomain.create(UUIDHelper.convertToUUID(dtoToAdapt.getId()), data.getDocumento(),
+		return PostulanteDomain.create(UUIDHelper.convertToUUID(data.getId()), data.getDocumento(),
 				data.getFirstName(), data.getSecondName(), data.getLastName(), data.getLastSecondName(),
-				data.getPhone(), data.getEmail(), data.getSex(), TipoDocumentoDomain.create(), CityDomain.create());
+				data.getPhone(), data.getEmail(), data.getSex(), TipoDocumentoDomain.create(UUIDHelper.convertToUUID(data.getId()),data.getTipoDocumento().getName()), 
+				CityDomain.create(UUIDHelper.convertToUUID(data.getId()), dtoToAdapt.getCiudad().getName()));
 	}
 
 	@Override
 	public PostulanteDTO adaptTarget(final PostulanteDomain data) {
 		var domainToAdapt = ObjectHelper.getDefault(data, PostulanteDomain.create(UUIDHelper.getDefault(), 0,
 				TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, 0, TextHelper.EMPTY,
-				TextHelper.EMPTY, TipoDocumentoDomain.create(), CityDomain.create()));
-
+				TextHelper.EMPTY, TipoDocumentoDomain.create(data.getId(), TextHelper.EMPTY), 
+				CityDomain.create(data.getId(), TextHelper.EMPTY)));
+		
 		return PostulanteDTO.create().setDocumento(domainToAdapt.getDocumento()).setFirstName(domainToAdapt.getFirstName()).setSecondName(domainToAdapt.getSecondName())
 				.setLastName(domainToAdapt.getLastName()).setLastSecondName(domainToAdapt.getLastSecondName()).setPhone(domainToAdapt.getPhone()).setEmail(domainToAdapt.getEmail())
 				.setSex(domainToAdapt.getSex()).setTipoDocumento(TipoDocumentoDTO.create()).setCiudad(CityDTO.create());	

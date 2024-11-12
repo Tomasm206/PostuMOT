@@ -14,7 +14,11 @@ import co.edu.uco.postumot.postulant.domain.PostulanteDomain;
 import co.edu.uco.postumot.postulant.entity.PostulanteEntity;
 
 public final class FindPostulanteImpl implements FindPostulante {
-
+	
+	public FindPostulanteImpl(DAOFactoryPostulante daoFactoryPostulante) {
+		 
+	 }
+	
 	@Override
 	public List<PostulanteDomain> execute(final PostulanteDomain data) {
 	    var factory = DAOFactoryPostulante.getFactory(DAOSource.POSTGRESQL);

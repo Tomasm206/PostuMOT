@@ -120,7 +120,12 @@ public final class SqlConnectionHelper {
 	public static Connection openConnection(final String connectionString) {
 
 		try {
+			Class.forName("org.postgresql.Driver");
 			return DriverManager.getConnection(connectionString);
+		} catch (final ClassNotFoundException exception) {
+			var userMessage = "No se pudo encontrar el controlador de la base de datos.";
+	        var technicalMessage = "No se encontró el controlador PostgreSQL JDBC.";
+	        throw new MOTAplicationException(userMessage, technicalMessage, exception, Layer.DATA);
 		} catch (final SQLException exception) {
 			var userMessage = "Se ha presentado un problema inesperado tratando de llevar a cabo la operación deseada...";
 			var technicalMessage = "Se ha presentado una excepción de tipo SQLException tratando de obtener la conexión con la fuente de datos SQL deseada. Por favor revise el log de errores para tener más detalles del error presentado...";

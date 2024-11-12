@@ -18,7 +18,7 @@ public final class FindPostulanteFacadeImpl implements FindPostulanteFacade{
 		var factory = DAOFactoryPostulante.getFactory(DAOSource.POSTGRESQL);
 		
 		try {	
-			var findPostulanteUseCase = new FindPostulanteImpl();
+			var findPostulanteUseCase = new FindPostulanteImpl(factory);
 			var postulanteDomain = PostulanteDTOAdapter.getPostulanteDTOAdapter().adaptSource(data);	
 		
 			return PostulanteDTOAdapter.getPostulanteDTOAdapter().adaptTarget(findPostulanteUseCase.execute(postulanteDomain));

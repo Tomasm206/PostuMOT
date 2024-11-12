@@ -27,24 +27,32 @@ public final class PostulantePostgreSqlDAO extends SqlDAO implements PostulanteD
 		statement.append(
 				"INSERT INTO postulante(id, documento, primernombre, segundonombre, primerapellido, segundoapellido, telefono, correo, genero, tipodocumento_id, city_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-		try (final var preparedStatement = getConnection().prepareStatement(statement.toString())) {
+		// Coloca un breakpoint aquí para verificar que la consulta se está construyendo
+		// correctamente
 
+		System.out.println("Consulta SQL construida: " + statement.toString());
+
+		try (final var preparedStatement = getConnection().prepareStatement(statement.toString())) {
+			
+			System.out.println(data.getCity().getId());
+			System.out.println(data.getTipoDocumento().getId());
+			
 			preparedStatement.setObject(1, data.getId());
 			preparedStatement.setInt(2, data.getDocumento());
 			preparedStatement.setString(3, data.getFirstName());
 			preparedStatement.setString(4, data.getSecondName());
 			preparedStatement.setString(5, data.getLastName());
 			preparedStatement.setString(6, data.getLastSecondName());
-			preparedStatement.setLong(7, data.getPhone());
+			preparedStatement.setInt(7, data.getPhone());
 			preparedStatement.setString(8, data.getEmail());
 			preparedStatement.setString(9, data.getSex());
-			preparedStatement.setObject(11, data.getTipoDocumento().getId());
-			preparedStatement.setObject(10, data.getCity().getId());
-			
+			preparedStatement.setObject(10, data.getTipoDocumento().getId());
+			preparedStatement.setObject(11, data.getCity().getId());
+
 			preparedStatement.executeUpdate();
 
 		} catch (final SQLException exception) {
-			var userMessage = "Se ha presentado un problema tratando de llevar a cabo el registro de la información del nuevo país. Por favor intente de nuevo y si el problema persiste reporte la novedad...";
+			var userMessage = "Se ha presentado un problema tratando de llevar a cabo el registro de la información del nuevo postulante. Por favor intente de nuevo y si el problema persiste reporte la novedad...";
 			var technicalMessage = "Se ha presentado un problema al tratar de registrar la informaciòn del nuevo país en la base de datos SQL Server. Por favor valide el log de errores para encontrar mayores detalles del problema presentado...";
 
 			throw DataPostuMOTException.crear(userMessage, technicalMessage, exception);
@@ -65,6 +73,36 @@ public final class PostulantePostgreSqlDAO extends SqlDAO implements PostulanteD
 	public List<PostulanteEntity> findAll() {
 		return findByFilter(new PostulanteEntity());
 	}
+
+//	@Override
+//	public List<PostulanteEntity> findAll() {
+//	    List<PostulanteEntity> postulantes = new ArrayList<>();
+//	    String sql = "SELECT id, documento, primernombre, segundonombre, primerapellido, segundoapellido, telefono, correo, genero, tipodocumento_id, city_id FROM postulante";
+//
+//	    try (PreparedStatement statement = connection.prepareStatement(sql);
+//	         ResultSet resultSet = statement.executeQuery()) {
+//
+//	        while (resultSet.next()) {
+//	            PostulanteEntity postulante = new PostulanteEntity();
+//	            postulante.setId(resultSet.getObject("id", UUID.class));
+//	            postulante.setDocumento(resultSet.getInt("documento"));
+//	            postulante.setFirstName(resultSet.getString("primernombre"));
+//	            postulante.setSecondName(resultSet.getString("segundonombre"));
+//	            postulante.setLastName(resultSet.getString("primerapellido"));
+//	            postulante.setLastSecondName(resultSet.getString("segundoapellido"));
+//	            postulante.setPhone(resultSet.getInt("telefono"));
+//	            postulante.setEmail(resultSet.getString("correo"));
+//	            postulante.setSex(resultSet.getString("genero"));
+//	            postulante.setTipoDocumento(resultSet.getObject("tipodocumento_id", UUID.class));
+//	            postulante.setCity(resultSet.getObject("city_id", UUID.class));
+//	            postulantes.add(postulante);
+//	        }
+//	    } catch (final SQLException exception) {
+//	        // Manejo de excepciones apropiado
+//	        throw DataPostuMOTException.crear("Error al consultar postulantes");
+//	    }
+//	    return postulantes;
+//	}
 
 	@Override
 	public List<PostulanteEntity> findByFilter(PostulanteEntity filter) {
@@ -170,18 +208,18 @@ public final class PostulantePostgreSqlDAO extends SqlDAO implements PostulanteD
 	public void delete(final UUID data) {
 		final StringBuilder statement = new StringBuilder();
 		statement.append("DELETE FROM postulante WHERE id = ?");
-		
+
 		try (final var preparedStatement = getConnection().prepareStatement(statement.toString())) {
-		
+
 			preparedStatement.setObject(1, data);
-				
+
 			preparedStatement.executeUpdate();
-				
-		}catch (final SQLException exception) {
-		  var userMessage = "Se ha presentado un problema";
-		  var technicalMessage = "Se ha presentado un problema";
-		  
-		  throw DataPostuMOTException.crear(userMessage, technicalMessage, exception);
+
+		} catch (final SQLException exception) {
+			var userMessage = "Se ha presentado un problema";
+			var technicalMessage = "Se ha presentado un problema";
+
+			throw DataPostuMOTException.crear(userMessage, technicalMessage, exception);
 		}
 	}
 }

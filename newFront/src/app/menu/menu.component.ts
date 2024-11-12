@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrl: './menu.component.css'
 })
 export class MenuComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   goToRegister() {
     this.router.navigate(['/register']);

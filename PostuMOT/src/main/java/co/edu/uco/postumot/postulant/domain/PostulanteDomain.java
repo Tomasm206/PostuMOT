@@ -46,7 +46,7 @@ public class PostulanteDomain extends Domain {
         return new PostulanteDomain(id, documento, firstName, secondName, lastName, lastSecondName, phone, email, sex, tipoDocumento, city);
     }
 
-    public static final PostulanteDomain create() {
+    static final PostulanteDomain create() {
         return new PostulanteDomain(
             UUIDHelper.getDefault(), 
             0,
@@ -57,8 +57,8 @@ public class PostulanteDomain extends Domain {
             0,               
             TextHelper.EMPTY,
             TextHelper.EMPTY,
-            TipoDocumentoDomain.create(UUIDHelper.getDefault(),null), 
-            CityDomain.create(UUIDHelper.getDefault(), null, null)
+            TipoDocumentoDomain.create(), 
+            CityDomain.create()
         );
     }
 

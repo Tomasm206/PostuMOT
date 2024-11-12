@@ -12,18 +12,18 @@ public class CityDomain extends Domain {
 	private String name;
 	private StateDomain state;
 
-	private CityDomain(final UUID id, final String name, final StateDomain state) {
+	private CityDomain(final UUID id, final String name) {
 		super(id);
 		setName(name);
 		setState(state);
 	}
 
-	public static final CityDomain create(final UUID id, final String name, final StateDomain state) {
-		return new CityDomain(id, name, state);
+	public static final CityDomain create(final UUID id, final String name) {
+		return new CityDomain(id, name);
 	}
 
 	public static final CityDomain create() {
-		return new CityDomain(UUIDHelper.getDefault(), TextHelper.EMPTY, StateDomain.create());
+		return new CityDomain(UUIDHelper.getDefault(), TextHelper.EMPTY);
 	}
 
 	public String getName() {

@@ -11,11 +11,10 @@ import co.edu.uco.postumot.postulant.entity.PostulanteEntity;
 
 public class PostulanteAlreadyExistsImpl implements PostulanteAlredyExists {
 	
-	private DAOFactoryPostulante factory;
 	
-	public PostulanteAlreadyExistsImpl() {
-        this.factory = DAOFactoryPostulante.getFactory(DAOSource.POSTGRESQL);
-    }
+//	public PostulanteAlreadyExistsImpl() {
+//        DAOFactoryPostulante.getFactory(DAOSource.POSTGRESQL);
+//    }
 	
 	@Override
 	public void execute(final UUID data, final DAOFactoryPostulante factory) {

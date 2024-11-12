@@ -40,15 +40,17 @@ public final class PostgreSqlDAOFactory extends DAOFactoryPostulante {
 	@Override
 	public void closeConnection() {
 		SqlConnectionHelper.closeConnection(connection);
-	}
-
-	@Override
-	public TipoDocumentoDAO getTipoDocumentoDAO() {
-		return new TipoDocumentoPostgreSqlDAO(connection);
+		System.out.println("Se cierra la conexion");
 	}
 
 	@Override
 	public PostulanteDAO getPostulanteDAO() {
 		return new PostulantePostgreSqlDAO(connection);
 	}
+	
+	@Override
+	public TipoDocumentoDAO getTipoDocumentoDAO() {
+		return new TipoDocumentoPostgreSqlDAO(connection);
+	}
+
 }

@@ -12,5 +12,5 @@ import { VacantesComponent } from './vacantes/vacantes.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'newFront';
+  title = 'postumot';
 }
