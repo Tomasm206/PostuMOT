@@ -1,10 +1,10 @@
 <div class="bkg">
     <main>
-        <form action="">
+        <form (ngSubmit)="onSubmit()">
             <h2>REGISTRAR USUARIO</h2>
             <div>
                 <label for="typeid">Tipo De Identificación:</label>
-                <select id="typeid" name="typeid" required>
+                <select id="typeid" [(ngModel)]="postulante.tipoDocumento.tipo" name="typeid" required>
                     <option value="">Seleccione</option>
                     <option value="cedula">Cédula de Ciudadanía</option>
                     <option value="cedulaExtranjera">Cédula de Extranjeria</option>
@@ -13,35 +13,41 @@
             </div>
             <div>
                 <label for="documento">Numero de Documento:</label>
-                <input type="text" id="documento" name="documento" required pattern="\d{8,10}">
+                <input type="text" id="documento" [(ngModel)]="postulante.documento" name="documento" required
+                    pattern="\d{8,10}">
             </div>
             <div>
-                <label for="firstname">Primer Nombre:</label>
-                <input type="text" id="firstname" name="firstname" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+"required minlength="1" maxlength="60">
+                <label for="firstName">Primer Nombre:</label>
+                <input type="text" id="firstName" [(ngModel)]="postulante.firstName" name="firstName" required
+                    pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" minlength="1" maxlength="60">
             </div>
             <div>
-                <label for="secondname">Segundo Nombre:</label>
-                <input type="text" id="secondname" name="secondname" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+">
+                <label for="secondName">Segundo Nombre:</label>
+                <input type="text" id="secondName" [(ngModel)]="postulante.secondName" name="secondName"
+                    pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+">
             </div>
             <div>
-                <label for="firstsurname">Primer Apellido:</label>
-                <input type="text" id="firstsurname" name="firstsurname" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+"required minlength="1" maxlength="60">
+                <label for="lastName">Primer Apellido:</label>
+                <input type="text" id="lastName" [(ngModel)]="postulante.lastName" name="lastName" required
+                    pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" minlength="1" maxlength="60">
             </div>
             <div>
-                <label for="secondsurname">Segundo Apellido:</label>
-                <input type="text" id="secondsurname" name="secondsurname" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" required minlength="1" maxlength="60">
+                <label for="lastSecondName">Segundo Apellido:</label>
+                <input type="text" id="lastSecondName" [(ngModel)]="postulante.lastSecondName" name="lastSecondName"
+                    pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" minlength="1" maxlength="60">
             </div>
             <div>
-                <label for="cell">Celular:</label>
-                <input type="tel" id="cell" name="cell" required pattern="\d{10}">
+                <label for="phone">Celular:</label>
+                <input type="tel" id="phone" [(ngModel)]="postulante.phone" name="phone" required pattern="\d{10}">
             </div>
             <div>
                 <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email" name="email" required minlength="15" maxlength="50">
+                <input type="email" id="email" [(ngModel)]="postulante.email" name="email" required minlength="15"
+                    maxlength="50">
             </div>
             <div>
-                <label for="gender">Género:</label> <!-- Cambiado `typeid` a `gender` -->
-                <select id="gender" name="gender" required>
+                <label for="sex">Género:</label>
+                <select id="sex" [(ngModel)]="postulante.sex" name="sex" required>
                     <option value="">Seleccione</option>
                     <option value="masculino">Masculino</option>
                     <option value="femenino">Femenino</option>
@@ -50,10 +56,10 @@
             </div>
             <div>
                 <label for="ciudad">Ciudad:</label>
-                <select id="ciudad" name="ciudad" required>
+                <select id="ciudad" [(ngModel)]="postulante.ciudad.ciudad" name="ciudad" required>
                     <option value="">Seleccione</option>
-                    <option value="bogota">Bogota</option>
-                    <option value="medellin">Medellin</option>
+                    <option value="bogota">Bogotá</option>
+                    <option value="medellin">Medellín</option>
                     <option value="rionegro">Rionegro</option>
                     <option value="cartagena">Cartagena</option>
                     <option value="n/a">N/A</option>
