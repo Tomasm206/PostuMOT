@@ -31,11 +31,7 @@ public final class PostulanteController {
 
 	@PostMapping("/create")
 	public ResponseEntity<GenericResponse> create(@RequestBody PostulanteDTO postulante) {
-		
-		System.out.println(postulante.getId() + postulante.getCiudad() + postulante.getTipoDocumento());
-		
-		
-		
+
 		var message = new ArrayList<String>();
 
 		try {
