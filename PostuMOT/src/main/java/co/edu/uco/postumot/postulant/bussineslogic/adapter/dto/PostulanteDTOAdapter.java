@@ -19,7 +19,7 @@ public final class PostulanteDTOAdapter implements Adapter<PostulanteDomain, Pos
 	private static final Adapter<PostulanteDomain, PostulanteDTO> instance = new PostulanteDTOAdapter();
 
 	private PostulanteDTOAdapter() {
-
+		
 	}
 
 	public static Adapter<PostulanteDomain, PostulanteDTO> getPostulanteDTOAdapter() {
@@ -29,10 +29,10 @@ public final class PostulanteDTOAdapter implements Adapter<PostulanteDomain, Pos
 	@Override
 	public PostulanteDomain adaptSource(final PostulanteDTO data) {
 		var dtoToAdapt = ObjectHelper.getDefault(data, PostulanteDTO.create());
-		return PostulanteDomain.create(UUIDHelper.convertToUUID(data.getId()), data.getDocumento(),
-				data.getFirstName(), data.getSecondName(), data.getLastName(), data.getLastSecondName(),
-				data.getPhone(), data.getEmail(), data.getSex(), TipoDocumentoDomain.create(UUIDHelper.convertToUUID(data.getId()),data.getTipoDocumento().getName()), 
-				CityDomain.create(UUIDHelper.convertToUUID(data.getId()), dtoToAdapt.getCiudad().getName()));
+		return PostulanteDomain.create(UUIDHelper.convertToUUID(UUIDHelper.getDefaultAsString()), dtoToAdapt.getDocumento(),
+				dtoToAdapt.getFirstName(), dtoToAdapt.getSecondName(), dtoToAdapt.getLastName(), data.getLastSecondName(),
+				dtoToAdapt.getPhone(), dtoToAdapt.getEmail(), dtoToAdapt.getSex(), TipoDocumentoDomain.create(UUIDHelper.convertToUUID(UUIDHelper.getDefaultAsString()), data.getTipoDocumento().getName()), 
+				CityDomain.create(UUIDHelper.convertToUUID(UUIDHelper.getDefaultAsString()), dtoToAdapt.getCiudad().getName()));
 	}
 
 	@Override
