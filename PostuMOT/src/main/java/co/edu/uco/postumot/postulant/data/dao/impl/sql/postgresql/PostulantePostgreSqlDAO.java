@@ -43,7 +43,7 @@ public final class PostulantePostgreSqlDAO extends SqlDAO implements PostulanteD
 			preparedStatement.setString(4, data.getSecondName());
 			preparedStatement.setString(5, data.getLastName());
 			preparedStatement.setString(6, data.getLastSecondName());
-			preparedStatement.setInt(7, data.getPhone());
+			preparedStatement.setLong(7, data.getPhone());
 			preparedStatement.setString(8, data.getEmail());
 			preparedStatement.setString(9, data.getSex());
 			preparedStatement.setObject(10, data.getTipoDocumento().getId());

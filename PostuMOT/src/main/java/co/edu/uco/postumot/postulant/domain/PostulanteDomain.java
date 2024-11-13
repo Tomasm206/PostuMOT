@@ -14,14 +14,14 @@ public class PostulanteDomain extends Domain {
     private String secondName;
     private String lastName;
     private String lastSecondName;
-    private int phone;
+    private long phone;
     private String email; 
     private String sex;
     private TipoDocumentoDomain tipoDocumento;
     private CityDomain city;
 
     protected PostulanteDomain(final UUID id, final int documento,final String firstName, final String secondName, final String lastName, final String lastSecondName,
-            final int phone, final String email, final String sex, final TipoDocumentoDomain tipoDocumento, final CityDomain city) {
+            final long phone, final String email, final String sex, final TipoDocumentoDomain tipoDocumento, final CityDomain city) {
         super(id);
         setDocumento(documento);
         setFirstName(firstName);
@@ -41,7 +41,7 @@ public class PostulanteDomain extends Domain {
     }
 
     public static final PostulanteDomain create(final UUID id, final int documento,final String firstName, final String secondName, final String lastName,
-    		final String lastSecondName, final int phone, final String email, final String sex, final TipoDocumentoDomain tipoDocumento,
+    		final String lastSecondName, final long phone, final String email, final String sex, final TipoDocumentoDomain tipoDocumento,
             final CityDomain city) {
         return new PostulanteDomain(id, documento, firstName, secondName, lastName, lastSecondName, phone, email, sex, tipoDocumento, city);
     }
@@ -94,11 +94,11 @@ public class PostulanteDomain extends Domain {
         this.lastSecondName = lastSecondName;
     }
 
-    public int getPhone() {
+    public long getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(long phone) {
         this.phone = phone;
     }
 

@@ -15,7 +15,7 @@ public class PostulanteEntity extends DomainEntity {
 	private String secondName;
 	private String lastName;
 	private String lastSecondName;
-	private int phone;
+	private long phone;
 	private String email;
 	private String sex;
 	private TipoDocumentoEntity tipoDocumento;
@@ -68,11 +68,11 @@ public class PostulanteEntity extends DomainEntity {
 		this.lastSecondName = TextHelper.applyTrim(lastSecondName);
 	}
 
-	public int getPhone() {
+	public long getPhone() {
 		return phone;
 	}
 
-	public void setPhone(final int phone) {
+	public void setPhone(final long phone) {
 		this.phone = phone;
 	}
 

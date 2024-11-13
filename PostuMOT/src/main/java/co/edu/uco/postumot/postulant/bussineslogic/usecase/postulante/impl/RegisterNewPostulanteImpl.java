@@ -17,7 +17,6 @@ import co.edu.uco.postumot.postulant.data.dao.DAOFactoryPostulante;
 import co.edu.uco.postumot.postulant.domain.PostulanteDomain;
 
 public final class RegisterNewPostulanteImpl implements RegisterNewPostulante {
-	private PostulanteAlredyExists postulanteAlreadyExists = new PostulanteAlreadyExistsImpl();
 	private PostulanteNameConsistencyIsValid postulanteNameConsistencyIsValid = new PostulanteNameConsistencyIsValidImpl();
 	private DAOFactoryPostulante daoFactory;
 
@@ -34,7 +33,7 @@ public final class RegisterNewPostulanteImpl implements RegisterNewPostulante {
 					data.getPhone(), data.getEmail(), data.getSex(), data.getTipoDocumento(), data.getCity());
 			var postulanteEntity = PostulanteEntityAdapter.getPostulanteEntityAdapter().adaptTarget(postulanteDomainToMap);
 
-			daoFactory.getPostulanteDAO().create(postulanteEntity); //Aqui hay problema
+			daoFactory.getPostulanteDAO().create(postulanteEntity); 
 
 			List<String> successMessages = new ArrayList<>();
 			successMessages.add("El postulante se registró de manera satisfactoria.");

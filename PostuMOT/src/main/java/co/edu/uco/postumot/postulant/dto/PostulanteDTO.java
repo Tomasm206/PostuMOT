@@ -13,7 +13,7 @@ public class PostulanteDTO extends DomainDTO {
     private String secondName;
     private String lastName;
     private String lastSecondName;
-    private int phone;
+    private long phone;
     private String email; 
     private String sex;
 	private TipoDocumentoDTO tipoDocumento;
@@ -73,11 +73,11 @@ public class PostulanteDTO extends DomainDTO {
 		return this;
 	}
 
-	public int getPhone() {
+	public long getPhone() {
 		return phone;
 	}
 
-	public PostulanteDTO setPhone(int phone) {
+	public PostulanteDTO setPhone(long phone) {
 		this.phone = phone;
 		return this;
 	}
