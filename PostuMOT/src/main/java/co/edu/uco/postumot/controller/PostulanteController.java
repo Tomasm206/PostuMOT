@@ -3,6 +3,7 @@ package co.edu.uco.postumot.controller;
 import java.util.ArrayList;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ import co.edu.uco.postumot.controller.response.concrete.PostulanteResponse;
 import co.edu.uco.postumot.postulant.bussineslogic.facade.postulante.impl.RegisterNewPostulanteFacadeImpl;
 import co.edu.uco.postumot.postulant.dto.PostulanteDTO;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/v1/postulante")
 public final class PostulanteController {

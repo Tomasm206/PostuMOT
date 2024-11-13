@@ -29,7 +29,7 @@ public final class RegisterNewPostulanteImpl implements RegisterNewPostulante {
 	@Override
 	public void execute(final PostulanteDomain data) {
 		try {
-			var postulanteDomainToMap = PostulanteDomain.create(data.getId(), data.getDocumento(),
+			var postulanteDomainToMap = PostulanteDomain.create(UUIDHelper.generate(), data.getDocumento(),
 					data.getFirstName(), data.getSecondName(), data.getLastName(), data.getLastSecondName(),
 					data.getPhone(), data.getEmail(), data.getSex(), data.getTipoDocumento(), data.getCity());
 			var postulanteEntity = PostulanteEntityAdapter.getPostulanteEntityAdapter().adaptTarget(postulanteDomainToMap);
